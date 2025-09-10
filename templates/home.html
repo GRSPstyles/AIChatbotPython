@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cohere ChatBot</title>
+</head>
+<body>
+    <h1>AI ChatBot (Cohere)</h1>
+    <form method="post" action="{{ url_for('home') }}">
+        {{ form.hidden_tag() }}
+        <label for="text">Enter text to chat:</label>
+        {{ form.text(size=60) }}<br>
+        {{ form.submit() }}
+    </form>
+    {% if output %}
+    <h2>Bot Response:</h2>
+    <p>{{ output }}</p>
+    {% endif %}
+</body>
+</html>
